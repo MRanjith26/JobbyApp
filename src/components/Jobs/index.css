@@ -1,4 +1,108 @@
 .jobs-section {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #000000;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 35px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
+@media screen and (max-width: 767px) {
+  .jobs-section {
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+.profile-filter-container {
+  margin: 0px;
+}
+@media screen and (min-width: 768px) {
+  .profile-filter-container {
+    width: 35%;
+    max-width: 300px;
+    min-width: 280px;
+    flex-shrink: 0;
+    margin-right: 40px;
+  }
+}
+.profile-search-container {
+  width: 100%;
+}
+.desk-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #7e858e;
+  width: 350px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 767px) {
+  .desk-search-container {
+    display: none;
+  }
+}
+
+.mobile-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #7e858e;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+@media screen and (min-width: 767px) {
+  .mobile-search-container {
+    display: none;
+  }
+}
+.search-input {
+  height: 40px;
+  width: 300px;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-family: 'Roboto';
+  font-size: 17px;
+  color: #f1f5f9;
+  font-weight: 400;
+}
+.mobile-search-input {
+  height: 40px;
+  width: 90%;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-family: 'Roboto';
+  font-size: 17px;
+  color: #f1f5f9;
+  font-weight: 400;
+}
+.search-button {
+  height: 40px;
+  width: 50px;
+  background-color: #272727;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+.search-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.jobs-container {
+  margin-top: 30px;
+  padding: 0px;
+  list-style: none;
+}
+
+/* TODO: change failure container styles*/
+/* TODO: change no jobs container style*/
+/* TODO: change loader container styles*/

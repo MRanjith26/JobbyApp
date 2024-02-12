@@ -1,0 +1,48 @@
+.none-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  min-height: 100vh;
+}
+.none-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+.none-img {
+  width: 300px;
+}
+@media screen and (min-width: 768px) {
+  .none-img {
+    width: 500px;
+  }
+}
+.none-title {
+  font-family: 'Roboto';
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .none-title {
+    font-size: 35px;
+    line-height: 0.5;
+  }
+}
+.none-text {
+  font-family: 'Roboto';
+  font-size: 17px;
+  color: #ffffff;
+  text-align: center;
+  width: 300px;
+}
+@media screen and (min-width: 768px) {
+  .none-text {
+    width: 100%;
+    font-size: 20px;
+  }
+}

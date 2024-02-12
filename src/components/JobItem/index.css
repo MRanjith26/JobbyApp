@@ -1,0 +1,131 @@
+.job-item {
+  margin-top: 15px;
+  background-color: #2f2f2f;
+  width: 95%;
+  border-radius: 12px;
+  color: #f1f5f9;
+  padding: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .job-item {
+    padding: 10px;
+    width: 100%;
+  }
+}
+.company-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+}
+.company-logo {
+  width: 80px;
+  height: 80px;
+}
+@media screen and (max-width: 767px) {
+  .company-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+.info-card {
+  margin-left: 10px;
+  font-weight: 'Roboto';
+}
+
+.job-title {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 0.5;
+}
+@media screen and (max-width: 767px) {
+  .job-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.rating-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.star-icon {
+  font-size: 20px;
+  color: #fbbf24;
+}
+@media screen and (max-width: 767px) {
+  .star-icon {
+    font-size: 17px;
+  }
+}
+.rating-text {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  .rating-text {
+    font-size: 16px;
+  }
+}
+.job-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto';
+}
+.type-location-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  gap: 20px;
+}
+.location-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.type-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.location-icon {
+  font-size: 20px;
+}
+.type-icon {
+  font-size: 25px;
+  color: #ffffff;
+}
+.type-text {
+  font-size: 15px;
+  font-weight: 400;
+}
+.salary-text {
+  font-size: 18px;
+  font-weight: 450;
+}
+
+.description-container {
+  font-family: 'Roboto';
+  color: #ffffff;
+  padding: 5px 0px;
+  border-top: 3px solid #7e858e;
+}
+.text-title {
+  font-size: 20px;
+  font-weight: 450;
+}
+.job-brief {
+  font-size: 15px;
+  line-height: 1.5;
+}

@@ -6,9 +6,9 @@ import {BsBriefcase} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
 
 const Header = props => {
-  const onLogout = () => {
-    const {history} = props
+  const onClickLogout = () => {
     Cookies.remove('jwt_token')
+    const {history} = props
     history.replace('/login')
   }
 
@@ -34,7 +34,11 @@ const Header = props => {
             </Link>
           </li>
         </ul>
-        <button className="desk-logout-button" type="button" onClick={onLogout}>
+        <button
+          className="desk-logout-button"
+          type="button"
+          onClick={onClickLogout}
+        >
           Logout
         </button>
         <ul className="mobile-nav-menu">
@@ -51,8 +55,8 @@ const Header = props => {
           <button
             className="mobile-logout-button"
             type="button"
-            aria-label="logout"
-            onClick={onLogout}
+            onClick={onClickLogout}
+            aria-label="Logout"
           >
             <FiLogOut className="nav-icon" />
           </button>
