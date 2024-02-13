@@ -13,6 +13,10 @@
     width: 100%;
   }
 }
+
+.job-link-item {
+  text-decoration: none;
+}
 .company-details {
   display: flex;
   flex-direction: row;
@@ -35,9 +39,8 @@
 }
 
 .job-title {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 600;
-  line-height: 0.5;
 }
 @media screen and (max-width: 767px) {
   .job-title {

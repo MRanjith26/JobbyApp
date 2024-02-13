@@ -19,9 +19,9 @@
 }
 @media screen and (min-width: 768px) {
   .profile-filter-container {
-    width: 35%;
+    width: 25%;
     max-width: 300px;
-    min-width: 280px;
+    min-width: 250px;
     flex-shrink: 0;
     margin-right: 40px;
   }
@@ -103,6 +103,102 @@
   list-style: none;
 }
 
+.jobsList-container {
+  margin-top: 10px;
+}
 /* TODO: change failure container styles*/
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  height: 90vh;
+}
+.failure-image {
+  width: 90%;
+  margin: 15px;
+}
+@media screen and (max-width: 767px) {
+  .failure-image {
+    width: 300px;
+    margin: 0px;
+  }
+}
+.fail-title {
+  font-family: 'Roboto';
+  font-size: 25px;
+  color: #ffffff;
+  line-height: 1;
+  font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  .fail-title {
+    font-size: 20px;
+  }
+}
+.fail-text {
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: #ffffff;
+  line-height: 1;
+}
+@media screen and (max-width: 767px) {
+  .fail-text {
+    font-size: 13px;
+  }
+}
 /* TODO: change no jobs container style*/
+.no-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  height: 100vh;
+}
+.no-image {
+  width: 100%;
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  .no-image {
+    width: 300px;
+    margin: 0px;
+  }
+}
+.no-title {
+  font-family: 'Roboto';
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1;
+}
+@media screen and (max-width: 767px) {
+  .no-title {
+    font-size: 25px;
+  }
+}
+.no-text {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1;
+}
+@media screen and (max-width: 767px) {
+  .no-text {
+    font-size: 13px;
+  }
+}
+
 /* TODO: change loader container styles*/
+.loader-jobs-container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

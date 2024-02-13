@@ -41,6 +41,12 @@ const salaryRangesList = [
 ]
 
 const JobFilters = props => {
+  const {changeSalaryRange} = props
+
+  const getSalaryId = event => {
+    changeSalaryRange(event.target.id)
+  }
+
   const renderEmploymentFilterView = () => {
     const {changeEmploymentType} = props
     return employmentTypesList.map(eachEmployment => {
@@ -53,26 +59,52 @@ const JobFilters = props => {
           <input
             type="checkbox"
             className="check-box"
-            id="employment"
+            id={eachEmployment.employmentTypeId}
             onChange={getEmploymentId}
+            name="employment"
           />
-          <label htmlFor="employment" className="label-title">
+          <label
+            htmlFor={eachEmployment.employmentTypeId}
+            className="label-title"
+          >
             {eachEmployment.label}
           </label>
         </li>
       )
     })
   }
+  //  TODO: add salary range filter options (radio)
+
+  const renderSalaryRangeFilterView = () => (
+    <>
+      {salaryRangesList.map(eachItem => (
+        <li className="salary-item" key={eachItem.salaryRangeId}>
+          <input
+            type="radio"
+            className="radio-box"
+            id={eachItem.salaryRangeId}
+            onChange={getSalaryId}
+            name="salary"
+          />
+          <label className="label-title" htmlFor={eachItem.salaryRangeId}>
+            {eachItem.label}
+          </label>
+        </li>
+      ))}
+    </>
+  )
 
   return (
     <>
       <ul className="employment-container">
-        <p className="filter-heading">Type of Employment</p>
+        <h1 className="filter-heading">Type of Employment</h1>
         {renderEmploymentFilterView()}
+      </ul>
+      <ul className="salary-range-container">
+        <h1 className="filter-heading">Salary Range</h1>
+        {renderSalaryRangeFilterView()}
       </ul>
     </>
   )
 }
 export default JobFilters
-
-//  renderSalaryRangeFilterView()

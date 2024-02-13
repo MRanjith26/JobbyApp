@@ -30,7 +30,8 @@ class Jobs extends Component {
 
   getJobsDetails = async () => {
     const {activeEmploymentIdList, activeSalaryRangeId, searchText} = this.state
-    const activeEmploymentIds = activeEmploymentIdList.join()
+    const activeEmploymentIds = activeEmploymentIdList.join(',')
+
     this.setState({apiStatus: JobsDataApiStatus.inProgress})
     const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentIds}&minimum_package=${activeSalaryRangeId}&search=${searchText}`
     const jwtToken = Cookies.get('jwt_token')
@@ -89,6 +90,10 @@ class Jobs extends Component {
     }
   }
 
+  changeSalaryRange = salaryId => {
+    this.setState({activeSalaryRangeId: salaryId}, this.getJobsDetails)
+  }
+
   renderSuccessView = () => {
     const {jobDetailsList} = this.state
     const ShowJobsList = jobDetailsList.length > 0
@@ -98,16 +103,14 @@ class Jobs extends Component {
 
   // TODO: No Jobs Found View (on API Success View)
   renderNoJobsView = () => (
-    <div className="none-container">
+    <div className="no-container">
       <img
         src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
         alt="no jobs"
-        className="none-image"
+        className="no-image"
       />
-      <h1 className="none-title">No Jobs Found</h1>
-      <p className="none-text">
-        We could not find any jobs. Try other filters.
-      </p>
+      <h1 className="no-title">No Jobs Found</h1>
+      <p className="no-text">We could not find any jobs. Try other filters.</p>
     </div>
   )
 
@@ -125,7 +128,7 @@ class Jobs extends Component {
 
   // TODO: Loader View
   renderLoaderView = () => (
-    <div className="loader-container" data-testid="loader">
+    <div className="loader-jobs-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -198,7 +201,10 @@ class Jobs extends Component {
               </button>
             </div>
             <UserProfile />
-            <JobFilters changeEmploymentType={this.changeEmploymentType} />
+            <JobFilters
+              changeEmploymentType={this.changeEmploymentType}
+              changeSalaryRange={this.changeSalaryRange}
+            />
           </div>
           <div className="profile-search-container">
             <div className="desk-search-container">
@@ -219,7 +225,7 @@ class Jobs extends Component {
                 <BsSearch className="search-icon" />
               </button>
             </div>
-            {this.renderJobsApiList()}
+            <div className="jobsList-container">{this.renderJobsApiList()}</div>
           </div>
         </div>
       </>
