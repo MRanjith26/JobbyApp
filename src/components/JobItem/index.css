@@ -4,7 +4,7 @@
   width: 95%;
   border-radius: 12px;
   color: #f1f5f9;
-  padding: 20px;
+  padding: 30px;
 }
 
 @media screen and (max-width: 767px) {
@@ -110,11 +110,22 @@
   font-size: 15px;
   font-weight: 400;
 }
+
+@media screen and (max-width: 767px) {
+  .type-text {
+    font-size: 13px;
+  }
+}
 .salary-text {
   font-size: 18px;
   font-weight: 450;
 }
 
+@media screen and (max-width: 767px) {
+  .salary-text {
+    font-size: 15px;
+  }
+}
 .description-container {
   font-family: 'Roboto';
   color: #ffffff;

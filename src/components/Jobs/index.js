@@ -7,6 +7,7 @@ import {Component} from 'react'
 import Header from '../Header'
 import UserProfile from '../UserProfile'
 import JobItem from '../JobItem'
+import JobFilters from '../JobFilters'
 
 const JobsDataApiStatus = {
   success: 'SUCCESS',
@@ -19,7 +20,7 @@ class Jobs extends Component {
     apiStatus: '',
     jobDetailsList: [],
     searchText: '',
-    activeEmploymentId: '',
+    activeEmploymentIdList: [],
     activeSalaryRangeId: '',
   }
 
@@ -28,9 +29,10 @@ class Jobs extends Component {
   }
 
   getJobsDetails = async () => {
-    const {activeEmploymentId, activeSalaryRangeId, searchText} = this.state
+    const {activeEmploymentIdList, activeSalaryRangeId, searchText} = this.state
+    const activeEmploymentIds = activeEmploymentIdList.join()
     this.setState({apiStatus: JobsDataApiStatus.inProgress})
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentId}&minimum_package=${activeSalaryRangeId}&search=${searchText}`
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentIds}&minimum_package=${activeSalaryRangeId}&search=${searchText}`
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       method: 'GET',
@@ -63,6 +65,28 @@ class Jobs extends Component {
 
   onSearchInput = event => {
     this.setState({searchText: event.target.value})
+  }
+
+  changeEmploymentType = employmentId => {
+    const {activeEmploymentIdList} = this.state
+    const checkId = activeEmploymentIdList.includes(employmentId)
+
+    if (checkId === false) {
+      this.setState(
+        prevState => ({
+          activeEmploymentIdList: [
+            ...prevState.activeEmploymentIdList,
+            employmentId,
+          ],
+        }),
+        this.getJobsDetails,
+      )
+    } else {
+      const filteredList = activeEmploymentIdList.filter(
+        employment => employment !== employmentId,
+      )
+      this.setState({activeEmploymentIdList: filteredList}, this.getJobsDetails)
+    }
   }
 
   renderSuccessView = () => {
@@ -174,6 +198,7 @@ class Jobs extends Component {
               </button>
             </div>
             <UserProfile />
+            <JobFilters changeEmploymentType={this.changeEmploymentType} />
           </div>
           <div className="profile-search-container">
             <div className="desk-search-container">
