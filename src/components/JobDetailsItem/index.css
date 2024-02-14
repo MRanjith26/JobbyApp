@@ -34,11 +34,21 @@
   line-height: 0.5;
   padding: 0px;
 }
+@media screen and (max-width: 767px) {
+  .job-para-title {
+    font-size: 20px;
+  }
+}
 .visit-text {
   font-size: 20px;
   color: #6366f1;
   text-decoration: none;
   font-weight: 450;
+}
+@media screen and (max-width: 767px) {
+  .visit-text {
+    font-size: 20px;
+  }
 }
 .visit-logo-url {
   display: flex;
@@ -50,9 +60,15 @@
   color: #6366f1;
   font-size: 20px;
 }
+
 .brief {
   font-size: 20px;
   line-height: 1.5;
+}
+@media screen and (max-width: 767px) {
+  .brief {
+    font-size: 15px;
+  }
 }
 .skills-container {
   margin: 30px 0px;
@@ -62,6 +78,11 @@
   font-weight: 450;
   line-height: 0.5;
   padding-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  .skills-title {
+    font-size: 20px;
+  }
 }
 .skills-card {
   list-style: none;
@@ -118,6 +139,11 @@
   line-height: 0.5;
   padding-top: 20px;
 }
+@media screen and (max-width: 767px) {
+  .life-heading {
+    font-size: 20px;
+  }
+}
 .company-data-container {
   display: flex;
   flex-direction: row;
@@ -137,6 +163,7 @@
 @media screen and (max-width: 767px) {
   .life-para {
     width: 100%;
+    font-size: 15px;
   }
 }
 .life-image {
@@ -154,19 +181,79 @@
 
 .similar-job-heading {
   font-size: 27px;
-  font-weight: 450;
+  font-weight: 500;
   line-height: 0.5;
   padding-top: 30px;
   color: #ffffff;
   align-self: flex-start;
 }
+@media screen and (max-width: 767px) {
+  .similar-job-heading {
+    font-size: 20px;
+  }
+}
 .similar-jobs-container {
   list-style: none;
-  padding: 0px;
+  padding: 20px 0px;
   margin: 0px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   gap: 30px;
+}
+.detail-failure-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+.detail-failure-image {
+  width: 600px;
+}
+@media screen and (max-width: 767px) {
+  .detail-failure-image {
+    width: 300px;
+  }
+}
+.failure-title {
+  font-size: 35px;
+  font-weight: 420;
+  line-height: 1;
+}
+@media screen and (max-width: 767px) {
+  .failure-title {
+    font-size: 20px;
+  }
+}
+.failure-text {
+  font-size: 15px;
+}
+@media screen and (max-width: 767px) {
+  .failure-text {
+    font-size: 15px;
+  }
+}
+.Retry-button {
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #4f46e5;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+@media screen and (min-width: 768px) {
+  .Retry-button {
+    font-size: 16px;
+    padding: 15px 35px;
+  }
 }

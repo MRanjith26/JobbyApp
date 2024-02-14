@@ -1,8 +1,8 @@
 .similar-job-item {
-  width: 300px;
+  width: 320px;
   border-radius: 10px;
   background-color: #2f2f2f;
-  padding: 15px;
+  padding: 20px;
   font-family: 'Roboto';
   color: #ffffff;
 }
@@ -13,13 +13,18 @@
   }
 }
 .similar-title {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 450;
 }
 
 .similar-job-brief {
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 @media screen and (max-width: 767px) {
+  .similar-job-brief {
+    font-size: 15px;
+  }
 }
 .similar-type-container {
   line-height: none;

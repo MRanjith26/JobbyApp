@@ -101,19 +101,19 @@ class JobDetailsItem extends Component {
   onClickJobDetailsRetry = () => this.getJobItemDetails()
 
   renderJobDetailsFailureView = () => (
-    <div className="failure-container">
+    <div className="detail-failure-container">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
         alt="failure view"
-        className="failure-image"
+        className="detail-failure-image"
       />
-      <h1 className="fail-title">Oops! Something Went Wrong</h1>
-      <p className="fail-text">
+      <h1 className="failure-title">Oops! Something Went Wrong</h1>
+      <p className="failure-text">
         We cannot seem to find the page you are looking for.
       </p>
       <button
         type="button"
-        className="try-button"
+        className="Retry-button"
         onClick={this.onClickJobDetailsRetry}
       >
         Retry
